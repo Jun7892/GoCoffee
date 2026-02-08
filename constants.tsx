@@ -14,7 +14,7 @@ export const CAFE_INFO: CafeInfo = {
   phone: "010-4528-9802",
   email: "yusin3507@naver.com",
   hours: "매일 10:00 - 22:00",
-  rentalInfo: "대관 및 광고 문의는 이메일/전화로 가능하며, 최소 3일 전 예약 부탁드립니다.",
+  rentalInfo: "대관 및 광고 문의는 이메일 또는 전화를 통해 가능합니다. 최소 3일전 예약",
   instagramUrl: "https://www.instagram.com/go_coffee_inha?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
 };
 
@@ -30,7 +30,6 @@ export const MENU_ITEMS: MenuItem[] = [
   { id: 6, name: "초콜릿", description: "부드럽고 진한 초콜릿 라떼", price: "4.5", image: "", category: 'special' },
   { id: 7, name: "오곡 라떼", description: "건강하고 고소한 곡물의 풍미", price: "4.5", image: "", category: 'special' },
   { id: 8, name: "오렌지 에이드", description: "상큼한 오렌지 과즙이 톡톡", price: "5.0", image: "", category: 'special' },
-  { id: 9, name: "레몬 에이드", description: "비타민 가득 상큼한 레몬의 유혹", price: "5.0", image: "", category: 'special' },
   { id: 10, name: "초코칩 블랜디드", description: "초코칩이 씹히는 달콤 시원한 맛", price: "5.8", image: "", category: 'special' },
   { id: 11, name: "쿠키 블랜디드", description: "바삭한 쿠키가 듬뿍 들어간 블랜디드", price: "5.8", image: "", category: 'special' },
   { id: 12, name: "요거트 스무디", description: "신선한 요거트의 상큼함이 가득", price: "5.5", image: "", category: 'special' },
