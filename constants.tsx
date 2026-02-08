@@ -52,5 +52,7 @@ export const IMAGES = {
   menuBoard: "https://gocoffeeimg.netlify.app/price2.jpg",
   menuGroup: "https://gocoffeeimg.netlify.app/menu_group.jpg",
   foodShot: "https://gocoffeeimg.netlify.app/coffee2_cake1_good.jpg",
-  displayCase: "https://gocoffeeimg.netlify.app/display_case_pretty.jpg"
+  displayCase: "https://gocoffeeimg.netlify.app/display_case_pretty.jpg",
+  eveningView: "https://gocoffeeimg.netlify.app/evening_view.jpg",
+  eveningView2: "https://gocoffeeimg.netlify.app/evening_view2.jpg"
 };

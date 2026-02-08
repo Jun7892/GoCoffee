@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { CAFE_INFO } from '../constants';
-import { MapPin, Phone, Mail, Clock, Calendar } from 'lucide-react';
+import { CAFE_INFO, IMAGES } from '../constants';
+import { MapPin, Phone, Mail, Clock, Calendar, Clapperboard } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
@@ -24,7 +24,6 @@ const Contact: React.FC = () => {
               <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
             </div>
 
-            {/* Increased gap and used flex-row to ensure one-line layout on medium screens up */}
             <div className="flex flex-col md:flex-row md:items-start gap-12 md:gap-20">
               <div className="flex items-start space-x-5 min-w-0">
                 <MapPin className="w-6 h-6 text-[#D4AF37] mt-1 shrink-0" />
@@ -73,15 +72,43 @@ const Contact: React.FC = () => {
 
             <hr className="border-white/10" />
 
-            <div>
-              <div className="flex items-center space-x-4 mb-5">
-                <Calendar className="w-5 h-5 text-[#D4AF37]" />
-                <h3 className="text-2xl font-serif text-[#D4AF37]">Rental & Ads</h3>
+            {/* Rental Section with Evening Mood Gallery */}
+            <div className="space-y-6">
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center space-x-4">
+                  <Calendar className="w-5 h-5 text-[#D4AF37]" />
+                  <h3 className="text-2xl font-serif text-[#D4AF37]">Rental & Ads</h3>
+                </div>
+                <div className="flex items-center space-x-2 text-[10px] text-[#D4AF37]/60 tracking-widest uppercase border border-[#D4AF37]/20 px-2 py-1 rounded">
+                  <Clapperboard className="w-3 h-3" />
+                  <span>Cinematic Mood</span>
+                </div>
               </div>
-              {/* md:whitespace-nowrap and slightly adjusted padding/gap for cleaner look */}
+
+              {/* Mood Gallery Integration */}
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                <div className="rounded-lg overflow-hidden h-32 border border-white/10 group relative">
+                  <img 
+                    src={IMAGES.eveningView} 
+                    alt="Evening Mood 1" 
+                    className="w-full h-full object-cover insta-filter transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                </div>
+                <div className="rounded-lg overflow-hidden h-32 border border-white/10 group relative">
+                  <img 
+                    src={IMAGES.eveningView2} 
+                    alt="Evening Mood 2" 
+                    className="w-full h-full object-cover insta-filter transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                </div>
+              </div>
+
               <p className="text-white/60 font-light leading-relaxed mb-8 md:whitespace-nowrap">
                 {CAFE_INFO.rentalInfo}
               </p>
+              
               <button className="w-full py-4 bg-transparent border border-[#D4AF37] text-[#D4AF37] uppercase tracking-widest text-sm hover:bg-[#D4AF37] hover:text-black transition-all duration-300">
                 Inquiry Now
               </button>
