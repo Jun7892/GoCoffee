@@ -91,7 +91,7 @@ const Menu: React.FC = () => {
           <img 
             src="https://gocoffeeimg.netlify.app/indoor_nightview.jpg" 
             alt="Instagram Spot" 
-            className="w-full h-full object-cover insta-filter opacity-50"
+            className="w-full h-full object-cover object-[center_20%] insta-filter opacity-50"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-gradient-to-t from-black via-transparent to-black/20">
             <h3 className="text-3xl md:text-5xl font-serif italic text-white mb-6">Create Your Story</h3>
