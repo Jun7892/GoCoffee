@@ -21,7 +21,6 @@ const Contact: React.FC = () => {
                   <p className="text-white/60 text-sm">{CAFE_INFO.location}</p>
                 </div>
               </div>
-              {/* Overlay styling to match aesthetic */}
               <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
             </div>
 
@@ -30,7 +29,8 @@ const Contact: React.FC = () => {
                 <MapPin className="w-6 h-6 text-[#D4AF37] mt-1 shrink-0" />
                 <div>
                   <h4 className="text-white font-medium mb-1">Location</h4>
-                  <p className="text-white/50 text-sm font-light leading-relaxed">{CAFE_INFO.location}</p>
+                  {/* Applied whitespace-nowrap to keep address on one line */}
+                  <p className="text-white/50 text-sm font-light leading-relaxed whitespace-nowrap">{CAFE_INFO.location}</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -76,7 +76,8 @@ const Contact: React.FC = () => {
                 <Calendar className="w-5 h-5 text-[#D4AF37]" />
                 <h3 className="text-2xl font-serif text-[#D4AF37]">Rental & Ads</h3>
               </div>
-              <p className="text-white/60 font-light leading-relaxed mb-6">
+              {/* Applied lg:whitespace-nowrap to keep rental info on one line on desktop */}
+              <p className="text-white/60 font-light leading-relaxed mb-6 lg:whitespace-nowrap">
                 {CAFE_INFO.rentalInfo}
               </p>
               <button className="w-full py-4 bg-transparent border border-[#D4AF37] text-[#D4AF37] uppercase tracking-widest text-sm hover:bg-[#D4AF37] hover:text-black transition-all duration-300">

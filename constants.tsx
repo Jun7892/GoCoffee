@@ -14,7 +14,7 @@ export const CAFE_INFO: CafeInfo = {
   phone: "010-4528-9802",
   email: "yusin3507@naver.com",
   hours: "매일 10:00 - 22:00",
-  rentalInfo: "대관 및 광고 문의는 이메일 또는 전화를 통해 가능합니다. 최소 3일전 예약 부탁드립니다.",
+  rentalInfo: "대관 및 광고 문의는 이메일/전화로 가능하며, 최소 3일 전 예약 부탁드립니다.",
   instagramUrl: "https://www.instagram.com/go_coffee_inha?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
 };
 

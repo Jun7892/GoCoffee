@@ -21,8 +21,9 @@ const Hero: React.FC = () => {
       setTypingSpeed(50); 
     }
 
+    // Reduced delay before deleting from 3000ms to 1500ms
     if (!isDeleting && displayText === currentTagline) {
-      setTimeout(() => setIsDeleting(true), 3000);
+      setTimeout(() => setIsDeleting(true), 1500);
     } else if (isDeleting && displayText === "") {
       setIsDeleting(false);
       setTaglineIndex((prev) => (prev + 1) % taglines.length);
