@@ -1,0 +1,7 @@
+{
+  "name": "gocoffee",
+  "description": "A sophisticated, Instagram-style cafe website for 'gocoffee' featuring a typing animation, elegant menu, and high-end aesthetic.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
