@@ -21,9 +21,8 @@ const Hero: React.FC = () => {
       setTypingSpeed(50); 
     }
 
-    // Reduced delay before deleting from 3000ms to 1500ms
     if (!isDeleting && displayText === currentTagline) {
-      setTimeout(() => setIsDeleting(true), 1500);
+      setTimeout(() => setIsDeleting(true), 2000); 
     } else if (isDeleting && displayText === "") {
       setIsDeleting(false);
       setTaglineIndex((prev) => (prev + 1) % taglines.length);
@@ -41,22 +40,22 @@ const Hero: React.FC = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
         style={{ backgroundImage: `url(${IMAGES.hero})` }}
       >
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/55"></div>
       </div>
 
       <div className="relative z-10 text-center px-4">
-        <h1 className="text-6xl md:text-8xl font-serif font-bold text-white tracking-[0.2em] mb-6 animate-[fadeIn_1s_ease-out_forwards]">
+        <h1 className="text-6xl md:text-8xl font-serif font-bold text-white tracking-[0.25em] mb-10 animate-[fadeIn_1.2s_ease-out_forwards]">
           GO GOFFEE
         </h1>
         
-        <div className="h-8 flex items-center justify-center text-xl md:text-2xl text-white/90 font-light">
-          <span>{displayText}</span>
-          <span className="ml-1 w-[2px] h-6 bg-white animate-pulse"></span>
+        <div className="h-10 flex items-center justify-center text-xl md:text-2xl text-white/90 font-light tracking-wide">
+          <span className="drop-shadow-lg">{displayText}</span>
+          <span className="ml-1 w-[2px] h-7 bg-[#D4AF37] animate-pulse"></span>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-px h-16 bg-gradient-to-b from-transparent via-[#D4AF37] to-[#D4AF37]"></div>
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-px h-20 bg-gradient-to-b from-transparent via-[#D4AF37] to-[#D4AF37] opacity-60"></div>
       </div>
     </section>
   );
