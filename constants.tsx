@@ -4,11 +4,11 @@ import { CafeInfo, MenuItem } from './types';
 export const CAFE_INFO: CafeInfo = {
   name: "GO GOFFEE",
   taglines: [
-    "Premium Coffee & Refined Mood",
-    "당신의 일상을 영화 속 한 장면처럼",
-    "엄선된 프리미엄 원두의 조화",
-    "도심 속에서 즐기는 시네마틱 휴식",
-    "고품격 음악과 함께하는 여유"
+    "인스타 감성 카페",
+    "고급 원두",
+    "느낌있는 음악",
+    "공부하기 좋은 카페",
+    "당신의 일상을 영화 속 한 장면처럼"
   ],
   location: "인천광역시 미추홀구 인주대로 125-1 1층",
   phone: "010-4528-9802",
