@@ -12,42 +12,41 @@ const Contact: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Map & Location */}
           <div className="space-y-12">
-            <div className="h-[400px] rounded-lg overflow-hidden border border-white/10 relative group bg-[#0a0a0a]">
-              {/* Clean Dark Gradient Background instead of duplicate image */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-50"></div>
+            <div className="h-[400px] rounded-lg overflow-hidden border border-white/10 relative bg-[#0a0a0a] flex flex-col items-center justify-center">
+              {/* Subtle Gradient Background */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-30"></div>
               
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-                <div className="bg-black/80 backdrop-blur-xl p-8 rounded-2xl border border-white/10 max-w-sm w-full space-y-6 shadow-2xl">
-                  <div className="space-y-2">
-                    <div className="w-16 h-16 bg-[#D4AF37]/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-[#D4AF37]/20">
-                      <MapPin className="w-8 h-8 text-[#D4AF37]" />
-                    </div>
-                    <h4 className="text-white text-xl font-serif">Find Your Way</h4>
-                    <p className="text-white/50 text-sm leading-relaxed font-light">
-                      {CAFE_INFO.location}
-                    </p>
+              {/* Simplified Content Layout (No inner floating box) */}
+              <div className="relative z-10 w-full max-w-sm px-6 text-center space-y-8">
+                <div className="space-y-4">
+                  <div className="w-14 h-14 bg-[#D4AF37]/5 rounded-full flex items-center justify-center mx-auto mb-2 border border-[#D4AF37]/10">
+                    <MapPin className="w-6 h-6 text-[#D4AF37]" />
                   </div>
-                  
-                  <div className="flex flex-col gap-3">
-                    <a 
-                      href={CAFE_INFO.naverMapUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 w-full py-3.5 bg-white/5 border border-[#03C75A]/30 text-[#03C75A] rounded-lg font-medium text-sm hover:bg-[#03C75A]/10 transition-all active:scale-[0.98]"
-                    >
-                      <Navigation className="w-4 h-4" />
-                      네이버 지도에서 보기
-                    </a>
-                    <a 
-                      href={CAFE_INFO.googleMapUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 w-full py-3.5 bg-white/5 border border-white/10 text-white/80 rounded-lg font-medium text-sm hover:bg-white/10 transition-all active:scale-[0.98]"
-                    >
-                      <Map className="w-4 h-4 text-[#4285F4]" />
-                      Google Maps
-                    </a>
-                  </div>
+                  <h4 className="text-white text-2xl font-serif tracking-wide">Location</h4>
+                  <p className="text-white/40 text-sm leading-relaxed font-light">
+                    {CAFE_INFO.location}
+                  </p>
+                </div>
+                
+                <div className="flex flex-col gap-3">
+                  <a 
+                    href={CAFE_INFO.naverMapUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 w-full py-3.5 bg-white/[0.03] border border-[#03C75A]/20 text-[#03C75A]/80 rounded-lg font-medium text-sm hover:bg-[#03C75A]/5 transition-all active:scale-[0.98]"
+                  >
+                    <Navigation className="w-4 h-4" />
+                    네이버 지도에서 보기
+                  </a>
+                  <a 
+                    href={CAFE_INFO.googleMapUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 w-full py-3.5 bg-white/[0.03] border border-white/5 text-white/50 rounded-lg font-medium text-sm hover:bg-white/5 transition-all active:scale-[0.98]"
+                  >
+                    <Map className="w-4 h-4 text-[#4285F4]/70" />
+                    Google Maps
+                  </a>
                 </div>
               </div>
             </div>
@@ -56,7 +55,7 @@ const Contact: React.FC = () => {
               <div className="flex items-start space-x-5 min-w-0">
                 <MapPin className="w-6 h-6 text-[#D4AF37] mt-1 shrink-0" />
                 <div className="min-w-0">
-                  <h4 className="text-white font-medium mb-1 tracking-wider uppercase text-xs opacity-40">Location</h4>
+                  <h4 className="text-white font-medium mb-1 tracking-wider uppercase text-xs opacity-40">Full Address</h4>
                   <p className="text-white/70 text-sm font-light leading-relaxed">
                     {CAFE_INFO.location}
                   </p>
@@ -65,7 +64,7 @@ const Contact: React.FC = () => {
               <div className="flex items-start space-x-5 shrink-0">
                 <Clock className="w-6 h-6 text-[#D4AF37] mt-1 shrink-0" />
                 <div>
-                  <h4 className="text-white font-medium mb-1 tracking-wider uppercase text-xs opacity-40">Hours</h4>
+                  <h4 className="text-white font-medium mb-1 tracking-wider uppercase text-xs opacity-40">Open Hours</h4>
                   <p className="text-white/70 text-sm font-light leading-relaxed whitespace-nowrap">{CAFE_INFO.hours}</p>
                 </div>
               </div>
@@ -73,7 +72,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Contact Details & Rental */}
-          <div className="bg-white/[0.03] p-10 rounded-lg border border-white/5 space-y-10">
+          <div className="bg-white/[0.02] p-10 rounded-lg border border-white/5 space-y-10">
             <div>
               <h3 className="text-2xl font-serif text-[#D4AF37] mb-6">Contact & Inquiry</h3>
               <div className="space-y-6">
@@ -115,7 +114,7 @@ const Contact: React.FC = () => {
 
               {/* Mood Gallery Integration */}
               <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="rounded-lg overflow-hidden h-32 border border-white/10 group relative">
+                <div className="rounded-lg overflow-hidden h-32 border border-white/5 group relative">
                   <img 
                     src={IMAGES.eveningView} 
                     alt="Evening Mood 1" 
@@ -123,7 +122,7 @@ const Contact: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
                 </div>
-                <div className="rounded-lg overflow-hidden h-32 border border-white/10 group relative">
+                <div className="rounded-lg overflow-hidden h-32 border border-white/5 group relative">
                   <img 
                     src={IMAGES.eveningView2} 
                     alt="Evening Mood 2" 
@@ -133,11 +132,11 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <p className="text-white/50 text-sm font-light leading-relaxed mb-8">
+              <p className="text-white/40 text-sm font-light leading-relaxed mb-8">
                 {CAFE_INFO.rentalInfo}
               </p>
               
-              <button className="w-full py-4 bg-transparent border border-[#D4AF37]/50 text-[#D4AF37] uppercase tracking-widest text-xs hover:bg-[#D4AF37] hover:text-black hover:border-[#D4AF37] transition-all duration-500 font-bold">
+              <button className="w-full py-4 bg-transparent border border-[#D4AF37]/30 text-[#D4AF37]/80 uppercase tracking-widest text-xs hover:bg-[#D4AF37] hover:text-black hover:border-[#D4AF37] transition-all duration-500 font-bold">
                 Inquiry Now
               </button>
             </div>
