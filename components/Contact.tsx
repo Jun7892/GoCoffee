@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { CAFE_INFO, IMAGES } from '../constants';
-import { MapPin, Phone, Mail, Clock, Calendar, Clapperboard } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Calendar, Clapperboard, Map, Navigation } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
@@ -12,24 +12,52 @@ const Contact: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Map & Location */}
           <div className="space-y-12">
-            <div className="h-[400px] bg-white/5 rounded-lg overflow-hidden border border-white/10 relative">
-              {/* Map Placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center text-center p-8">
-                <div className="space-y-4">
-                  <MapPin className="w-12 h-12 text-[#D4AF37] mx-auto opacity-50" />
-                  <p className="text-white/40 italic">Google Maps Integration Placeholder</p>
-                  <p className="text-white/60 text-sm">{CAFE_INFO.location}</p>
+            <div className="h-[400px] rounded-lg overflow-hidden border border-white/10 relative group bg-[#0a0a0a]">
+              {/* Clean Dark Gradient Background instead of duplicate image */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-50"></div>
+              
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
+                <div className="bg-black/80 backdrop-blur-xl p-8 rounded-2xl border border-white/10 max-w-sm w-full space-y-6 shadow-2xl">
+                  <div className="space-y-2">
+                    <div className="w-16 h-16 bg-[#D4AF37]/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-[#D4AF37]/20">
+                      <MapPin className="w-8 h-8 text-[#D4AF37]" />
+                    </div>
+                    <h4 className="text-white text-xl font-serif">Find Your Way</h4>
+                    <p className="text-white/50 text-sm leading-relaxed font-light">
+                      {CAFE_INFO.location}
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-col gap-3">
+                    <a 
+                      href={CAFE_INFO.naverMapUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 w-full py-3.5 bg-white/5 border border-[#03C75A]/30 text-[#03C75A] rounded-lg font-medium text-sm hover:bg-[#03C75A]/10 transition-all active:scale-[0.98]"
+                    >
+                      <Navigation className="w-4 h-4" />
+                      네이버 지도에서 보기
+                    </a>
+                    <a 
+                      href={CAFE_INFO.googleMapUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 w-full py-3.5 bg-white/5 border border-white/10 text-white/80 rounded-lg font-medium text-sm hover:bg-white/10 transition-all active:scale-[0.98]"
+                    >
+                      <Map className="w-4 h-4 text-[#4285F4]" />
+                      Google Maps
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
             </div>
 
             <div className="flex flex-col md:flex-row md:items-start gap-12 md:gap-20">
               <div className="flex items-start space-x-5 min-w-0">
                 <MapPin className="w-6 h-6 text-[#D4AF37] mt-1 shrink-0" />
                 <div className="min-w-0">
-                  <h4 className="text-white font-medium mb-1 tracking-wider">Location</h4>
-                  <p className="text-white/50 text-sm font-light leading-relaxed md:whitespace-nowrap">
+                  <h4 className="text-white font-medium mb-1 tracking-wider uppercase text-xs opacity-40">Location</h4>
+                  <p className="text-white/70 text-sm font-light leading-relaxed">
                     {CAFE_INFO.location}
                   </p>
                 </div>
@@ -37,40 +65,40 @@ const Contact: React.FC = () => {
               <div className="flex items-start space-x-5 shrink-0">
                 <Clock className="w-6 h-6 text-[#D4AF37] mt-1 shrink-0" />
                 <div>
-                  <h4 className="text-white font-medium mb-1 tracking-wider">Hours</h4>
-                  <p className="text-white/50 text-sm font-light leading-relaxed whitespace-nowrap">{CAFE_INFO.hours}</p>
+                  <h4 className="text-white font-medium mb-1 tracking-wider uppercase text-xs opacity-40">Hours</h4>
+                  <p className="text-white/70 text-sm font-light leading-relaxed whitespace-nowrap">{CAFE_INFO.hours}</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Contact Details & Rental */}
-          <div className="bg-white/5 p-10 rounded-lg border border-white/10 space-y-10">
+          <div className="bg-white/[0.03] p-10 rounded-lg border border-white/5 space-y-10">
             <div>
               <h3 className="text-2xl font-serif text-[#D4AF37] mb-6">Contact & Inquiry</h3>
               <div className="space-y-6">
-                <div className="flex items-center space-x-5">
-                  <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center border border-[#D4AF37]/30">
+                <div className="flex items-center space-x-5 group">
+                  <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center border border-[#D4AF37]/20 group-hover:border-[#D4AF37]/50 transition-colors">
                     <Phone className="w-4 h-4 text-[#D4AF37]" />
                   </div>
                   <div>
-                    <span className="block text-xs uppercase text-white/40 tracking-widest mb-0.5">Call Us</span>
-                    <p className="text-white font-medium">{CAFE_INFO.phone}</p>
+                    <span className="block text-[10px] uppercase text-white/30 tracking-widest mb-0.5">Call Us</span>
+                    <p className="text-white font-medium group-hover:text-[#D4AF37] transition-colors">{CAFE_INFO.phone}</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-5">
-                  <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center border border-[#D4AF37]/30">
+                <div className="flex items-center space-x-5 group">
+                  <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center border border-[#D4AF37]/20 group-hover:border-[#D4AF37]/50 transition-colors">
                     <Mail className="w-4 h-4 text-[#D4AF37]" />
                   </div>
                   <div>
-                    <span className="block text-xs uppercase text-white/40 tracking-widest mb-0.5">Email Us</span>
-                    <p className="text-white font-medium">{CAFE_INFO.email}</p>
+                    <span className="block text-[10px] uppercase text-white/30 tracking-widest mb-0.5">Email Us</span>
+                    <p className="text-white font-medium group-hover:text-[#D4AF37] transition-colors">{CAFE_INFO.email}</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <hr className="border-white/10" />
+            <hr className="border-white/5" />
 
             {/* Rental Section with Evening Mood Gallery */}
             <div className="space-y-6">
@@ -91,25 +119,25 @@ const Contact: React.FC = () => {
                   <img 
                     src={IMAGES.eveningView} 
                     alt="Evening Mood 1" 
-                    className="w-full h-full object-cover insta-filter transition-transform duration-700 group-hover:scale-110" 
+                    className="w-full h-full object-cover insta-filter transition-transform duration-1000 group-hover:scale-110" 
                   />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
                 </div>
                 <div className="rounded-lg overflow-hidden h-32 border border-white/10 group relative">
                   <img 
                     src={IMAGES.eveningView2} 
                     alt="Evening Mood 2" 
-                    className="w-full h-full object-cover insta-filter transition-transform duration-700 group-hover:scale-110" 
+                    className="w-full h-full object-cover insta-filter transition-transform duration-1000 group-hover:scale-110" 
                   />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
                 </div>
               </div>
 
-              <p className="text-white/60 font-light leading-relaxed mb-8 md:whitespace-nowrap">
+              <p className="text-white/50 text-sm font-light leading-relaxed mb-8">
                 {CAFE_INFO.rentalInfo}
               </p>
               
-              <button className="w-full py-4 bg-transparent border border-[#D4AF37] text-[#D4AF37] uppercase tracking-widest text-sm hover:bg-[#D4AF37] hover:text-black transition-all duration-300">
+              <button className="w-full py-4 bg-transparent border border-[#D4AF37]/50 text-[#D4AF37] uppercase tracking-widest text-xs hover:bg-[#D4AF37] hover:text-black hover:border-[#D4AF37] transition-all duration-500 font-bold">
                 Inquiry Now
               </button>
             </div>

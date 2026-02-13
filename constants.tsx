@@ -15,7 +15,9 @@ export const CAFE_INFO: CafeInfo = {
   email: "yusin3507@naver.com",
   hours: "매일 10:00 - 22:00",
   rentalInfo: "대관 및 광고 문의는 이메일 또는 전화를 통해 가능합니다. 최소 3일전 예약",
-  instagramUrl: "https://www.instagram.com/go_coffee_inha?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+  instagramUrl: "https://www.instagram.com/go_coffee_inha?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+  naverMapUrl: "https://naver.me/5T4FC8SF",
+  googleMapUrl: "https://maps.app.goo.gl/shPP2PDePZF2zgZm9"
 };
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -39,6 +41,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // DESSERT
   { id: 15, name: "수제 쿠키", description: "매일 아침 직접 굽는 고소한 쿠키", price: "3.0", image: "", category: 'dessert' },
   { id: 16, name: "허니브래드", description: "달콤한 허니 시럽과 생크림의 조화", price: "6.0", image: "", category: 'dessert' },
+  // Fixed id: 17 - removed duplicate description and added missing image property
   { id: 17, name: "초코 케익", description: "진한 풍미의 꾸덕한 초코 케익", price: "4.7", image: "", category: 'dessert' },
   { id: 18, name: "티라미슈", description: "입안에서 사르르 녹는 부드러움", price: "4.7", image: "", category: 'dessert' },
   { id: 19, name: "치즈 케익", description: "깊고 진한 치즈의 풍미", price: "4.7", image: "", category: 'dessert' },

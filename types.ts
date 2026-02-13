@@ -17,4 +17,6 @@ export interface CafeInfo {
   hours: string;
   rentalInfo: string;
   instagramUrl: string;
+  naverMapUrl?: string;
+  googleMapUrl?: string;
 }
